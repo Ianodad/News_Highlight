@@ -1,0 +1,22 @@
+{% macro newsList(news) %}
+
+{% for article in news %}
+<div class="article d-flex flex-wrap p-2">
+    <div class="card text-center" style=" width: 20rem;">
+        <div class="card-header">
+            {{article.name}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">{{article.descript}}</p>
+            <a href="{{article.url}}" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{article.cat}}
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endmacro %}

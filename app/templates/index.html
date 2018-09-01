@@ -1,3 +1,5 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
 <html lang="en">
 
 <head>
@@ -8,12 +10,14 @@
 </head>
 
 <body>
-
-    {% for new in news %}
-
-    <h1>{{new.name}}</h1>
-    {% endfor %}
+    {% block content %}
+    <div class="container-fluid ">
+        <div class="row">
+            {{ macro.newsList(news) }}
+        </div>
+    </div>
     <h1>{{title}}</h1>
+    {% endblock%}
 </body>
 
 </html>

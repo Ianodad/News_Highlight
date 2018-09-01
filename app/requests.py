@@ -23,8 +23,6 @@ def get_news():
             news_result_list = news_response['sources']
             news_results = process_results(news_result_list)
 
-    print(news_results)
-
     return news_results
 
 
