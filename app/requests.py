@@ -7,11 +7,11 @@ from .models import News
 api_key = '7c1c3351a80d4bb78f19854119971356'
 
 # getting the movie base url
-base_url = 'https://newsapi.org/v2/sources?apiKey={}'
+base_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
 
 
-def get_news():
-    get_news_url = base_url.format(api_key)
+def get_news(category):
+    get_news_url = base_url.format(category, api_key)
     print(get_news_url)
     with urllib.request.urlopen(get_news_url) as url:
         news_data = url.read()

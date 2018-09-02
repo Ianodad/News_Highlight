@@ -13,7 +13,24 @@
     {% block content %}
     <div class="container-fluid ">
         <div class="row">
-            {{ macro.newsList(news) }}
+            <h1 class="col-md-12 text-center">General</h1>
+            {{ macro.newsList(general) }}
+        </div>
+        <div class="row">
+            <h1 class="col-md-12 text-center">Business</h1>
+            {{ macro.newsList(business) }}
+        </div>
+        <div class="row">
+            <h1 class="col-md-12 text-center">Entertainment</h1>
+            {{ macro.newsList(entertainment) }}
+        </div>
+        <div class="row">
+            <h1 class="col-md-12 text-center">Technology</h1>
+            {{ macro.newsList(technology) }}
+        </div>
+        <div class="row">
+            <h1 class="col-md-12 text-center">Science</h1>
+            {{ macro.newsList(science) }}
         </div>
     </div>
     <h1>{{title}}</h1>
