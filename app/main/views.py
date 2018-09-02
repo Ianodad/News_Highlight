@@ -6,6 +6,9 @@ from ..models import Sources, Articles
 
 @main.route('/')
 def index():
+    '''
+    root direcroy holdng all the sources views
+    '''
     general = get_sources('general')
     business = get_sources('business')
     entertainment = get_sources('entertainment')
@@ -17,10 +20,13 @@ def index():
     title = "hello world"
     return render_template('index.html', title=title, general=general, business=business, entertainment=entertainment, technology=technology, science=science)
 
+
 @main.route('/articles/<int:id>')
-def article(id):
+def articles(id):
     '''
-    view all article based of each source
+    view all article based of each source through the everything Api
     '''
 
-    article = 
+    articles = get_articles(id)
+
+    return render_template('article.html', articles=articles)

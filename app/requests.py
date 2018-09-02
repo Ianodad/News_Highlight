@@ -61,24 +61,29 @@ def get_articles(id):
         if articles_response['everything']:
             articles_result_list = articles_response['everything']
             articles_results = process_articles(articles_result_list)
-
+    print(articles_results)
     return articles_results
 
 
 def process_articles(articles_list):
     '''
-    getting instance of the list
+    getting instance of the list of articles
     '''
     articles_result = []
+
+    print(articles_result)
     for article in articles_list:
         id = article.get('id')
         name = article.get('name')
         author = article.get('author')
         title = article.get('title')
+        description = article.get('description')
         url = article.get('url')
         image = article.get('urlToImage')
         date = article.get('publishedAt')
 
-        articles_object = Articles(id, name, author, title, url, image, date)
+        articles_object = Articles(
+            id, name, author, title, description, url, image, date)
         articles_result.append(articles_object)
+
     return articles_result
