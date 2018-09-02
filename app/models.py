@@ -1,7 +1,7 @@
 class Sources:
 
     '''
-    Class for holding news api
+    Class for holding sources api
     '''
 
     def __init__(self, id, name, descript, url, cat):
@@ -11,3 +11,18 @@ class Sources:
         self. descript = descript
         self.url = url
         self.cat = cat
+        
+class Articles:
+    '''
+    Class for holding articles from everything api
+    '''
+
+    def __init__(self, id, name, author, title, url, image, date):
+    
+        self.id = id
+        self.name = name
+        self.author = author
+        self.title = title
+        self.url = url
+        self.image = image
+        self.date = date
