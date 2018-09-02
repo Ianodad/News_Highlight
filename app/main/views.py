@@ -1,16 +1,16 @@
 from flask import render_template
 from . import main  # importing data from main
-from ..requests import get_news
+from ..requests import get_sources
 from ..models import News
 
 
 @main.route('/')
 def index():
-    general = get_news('general')
-    business = get_news('business')
-    entertainment = get_news('entertainment')
-    technology = get_news('technology')
-    science = get_news('science')
+    general = get_sources('general')
+    business = get_sources('business')
+    entertainment = get_sources('entertainment')
+    technology = get_sources('technology')
+    science = get_sources('science')
 
     # for i in real_news:
     #     print(i.name)

@@ -10,7 +10,7 @@ api_key = '7c1c3351a80d4bb78f19854119971356'
 base_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
 
 
-def get_news(category):
+def get_sources(category):
     get_news_url = base_url.format(category, api_key)
     print(get_news_url)
     with urllib.request.urlopen(get_news_url) as url:
@@ -24,6 +24,9 @@ def get_news(category):
             news_results = process_results(news_result_list)
 
     return news_results
+
+
+# def get_
 
 
 def process_results(news_list):
