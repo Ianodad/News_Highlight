@@ -1,7 +1,7 @@
 # from main import main
 import urllib.request
 import json
-from .models import News
+from .models import Sources, Articles
 
 # getting api key
 api_key = '7c1c3351a80d4bb78f19854119971356'
@@ -76,9 +76,9 @@ def process_articles(articles_list):
         author = article.get('author')
         title = article.get('title')
         url = article.get('url')
-        image = news.get('urlToImage')
-        date = news.get('publishedAt')
+        image = article.get('urlToImage')
+        date = article.get('publishedAt')
 
-        articles_object = News(id, name, descript, url, cat)
+        articles_object = Articles(id, name, author, title, url, image, date)
         articles_result.append(articles_object)
     return articles_result
