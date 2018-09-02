@@ -8,40 +8,77 @@ api_key = '7c1c3351a80d4bb78f19854119971356'
 
 # getting the movie base url
 base_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
+base_url_articles = 'https://newsapi.org/v2/everything?sources={}&apikeyy={}'
 
 
 def get_sources(category):
-    get_news_url = base_url.format(category, api_key)
-    print(get_news_url)
-    with urllib.request.urlopen(get_news_url) as url:
-        news_data = url.read()
-        news_response = json.loads(news_data)
+    get_sources_url = base_url.format(category, api_key)
+    with urllib.request.urlopen(get_sources_url) as url:
+        sources_data = url.read()
+        sources_response = json.loads(sources_data)
 
-        news_results = None
+        sources_results = None
 
-        if news_response['sources']:
-            news_result_list = news_response['sources']
-            news_results = process_results(news_result_list)
+        if sources_response['sources']:
+            sources_result_list = sources_response['sources']
+            sources_results = process_results(sources_result_list)
 
-    return news_results
-
-
-# def get_
+    return sources_results
 
 
-def process_results(news_list):
+def process_results(sources_list):
+    '''
+    getting instance of the list of sources
+    '''
+    sources_result = []
+    for source in sources_list:
+        id = source.get('id')
+        name = source.get('name')
+        descript = source.get('description')
+        url = source.get('url')
+        cat = source.get('category')
+        # date = news.get('date')
+
+        sources_object = Sources(id, name, descript, url, cat)
+        sources_result.append(sources_object)
+    return sources_result
+
+
+'''
+Using the base url everything we can get article of specific sources articles
+'''
+
+
+def get_articles(id):
+
+    get_articles_url = base_url_articles.format(id, api_key)
+    with urllib.request.urlopen(get_articles_url) as url:
+        articles_data = url.read()
+        articles_response = json.loads(articles_data)
+
+        articles_results = None
+
+        if articles_response['everything']:
+            articles_result_list = articles_response['everything']
+            articles_results = process_articles(articles_result_list)
+
+    return articles_results
+
+
+def process_articles(articles_list):
     '''
     getting instance of the list
     '''
-    news_result = []
-    for news in news_list:
-        id = news.get('id')
-        name = news.get('name')
-        descript = news.get('description')
-        url = news.get('url')
-        cat = news.get('category')
-        # date = news.get('date')
+    articles_result = []
+    for article in articles_list:
+        id = article.get('id')
+        name = article.get('name')
+        author = article.get('author')
+        title = article.get('title')
+        url = article.get('url')
+        image = news.get('urlToImage')
+        date = news.get('publishedAt')
 
-        news_object = News(id, name, descript, url, cat)
-        news_result.append(news_object)
-    return news_result
+        articles_object = News(id, name, descript, url, cat)
+        articles_result.append(articles_object)
+    return articles_result

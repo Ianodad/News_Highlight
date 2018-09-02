@@ -1,4 +1,4 @@
-class News:
+class Sources:
 
     '''
     Class for holding news api
