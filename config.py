@@ -1,6 +1,12 @@
 import os
 
-#
+# Getting the url key
+api_key = None
+
+# Getting base url
+news_article_base_url = None
+news_source_base_url = None
+news_highlight_base_url =None
 class Config:
     '''
     General configuration parent class
