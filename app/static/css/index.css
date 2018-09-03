@@ -1,3 +1,11 @@
 .index {
     background-color: #1F1F1F;
 }
+
+h1 {}
+
+.topic {
+    height: 10em;
+    color: aliceblue;
+    background-color: aliceblue;
+}
