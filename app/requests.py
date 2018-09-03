@@ -8,10 +8,14 @@ api_key = '7c1c3351a80d4bb78f19854119971356'
 
 # getting the movie base url
 base_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
-base_url_articles = 'https://newsapi.org/v2/everything?sources={}&apikeyy={}'
+base_url_articles = 'https://newsapi.org/v2/everything?sources={}&apikey={}'
+base_url_headlines = ''
 
 
 def get_sources(category):
+    '''
+    using base_url to get data from the sources
+    '''
     get_sources_url = base_url.format(category, api_key)
     with urllib.request.urlopen(get_sources_url) as url:
         sources_data = url.read()
@@ -50,18 +54,21 @@ Using the base url everything we can get article of specific sources articles
 
 
 def get_articles(id):
+    '''
+    getting a article_base url to get artciles with id from the source
+    '''
 
     get_articles_url = base_url_articles.format(id, api_key)
+    print(get_articles_url)
     with urllib.request.urlopen(get_articles_url) as url:
         articles_data = url.read()
         articles_response = json.loads(articles_data)
 
         articles_results = None
 
-        if articles_response['everything']:
-            articles_result_list = articles_response['everything']
+        if articles_response['articles']:
+            articles_result_list = articles_response['articles']
             articles_results = process_articles(articles_result_list)
-    print(articles_results)
     return articles_results
 
 
@@ -82,8 +89,10 @@ def process_articles(articles_list):
         image = article.get('urlToImage')
         date = article.get('publishedAt')
 
-        articles_object = Articles(
-            id, name, author, title, description, url, image, date)
-        articles_result.append(articles_object)
+        if image:
+
+            articles_object = Articles(
+                id, name, author, title, description, url, image, date)
+            articles_result.append(articles_object)
 
     return articles_result

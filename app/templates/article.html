@@ -1,14 +1,15 @@
 {% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+
 
 {% block content %}
-
-{% for article in articles %}
 
 <div class="container">
 
     <div class="row">
         <h1 class="col-md-12 text-center">Here is yout views</h1>
-        {{ macro.articlesList((articles) }}
+        {{ macro.articlesList(articles) }}
     </div>
 
 </div>

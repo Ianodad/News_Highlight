@@ -21,7 +21,7 @@ def index():
     return render_template('index.html', title=title, general=general, business=business, entertainment=entertainment, technology=technology, science=science)
 
 
-@main.route('/articles/<int:id>')
+@main.route('/articles/<id>')
 def articles(id):
     '''
     view all article based of each source through the everything Api
