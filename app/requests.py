@@ -3,8 +3,23 @@ import urllib.request
 import json
 from .models import Sources, Articles
 
-# getting api key
-api_key = '7c1c3351a80d4bb78f19854119971356'
+# Getting the url key
+api_key = None
+
+# Getting base url
+news_a_base_url = None
+news_s_base_url = None
+news_h_base_url = None
+
+
+def configure_request(app):
+    global api_key, news_a_base_url, news_s_base_url, news_h_base_url
+    api_key
+
+    news_s_base_url = app.config[' NEWS_SOURCE_BASE_URL']
+    news_a_base_url = app.config[' NEWS_ARTICLE_BASE_URL']
+    news_h_base_url = app.condig['NEWS_TOPHEADLINES_BASE_URL']
+
 
 # getting the movie base url
 base_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
@@ -16,7 +31,7 @@ def get_sources(category):
     '''
     using base_url to get data from the sources
     '''
-    get_sources_url = base_url.format(category, api_key)
+    get_sources_url = news_s_base_url.format(category, api_key)
     with urllib.request.urlopen(get_sources_url) as url:
         sources_data = url.read()
         sources_response = json.loads(sources_data)
@@ -58,7 +73,7 @@ def get_articles(id):
     getting a article_base url to get artciles with id from the source
     '''
 
-    get_articles_url = base_url_articles.format(id, api_key)
+    get_articles_url = news_a_base_url.format(id, api_key)
     print(get_articles_url)
     with urllib.request.urlopen(get_articles_url) as url:
         articles_data = url.read()
