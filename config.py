@@ -1,13 +1,15 @@
 import os
+
+
 class Config:
     '''
     General configuration parent class
     '''
-    NEWS_SOURCE_BASE_URL = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
-    NEWS_ARTICLE_BASE_URL = 'https://newsapi.org/v2/everything?sources={}&apikey={}'
+    NEWS_SOURCE_BASE_URL = 'https://newsapi.org/v2/sources?sources={}&apiKey={}'
+    NEWS_ARTICLE_BASE_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
     NEWS_TOPHEADLINES_BASE_URL = ''
 
-    NEWS_KEY = os.environ.get('NEWS_API_KEY')
+    NEWS_KEY = os.environ.get('NEWS_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
 

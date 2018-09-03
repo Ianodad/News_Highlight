@@ -1,6 +1,7 @@
 # from main import main
 import urllib.request
 import json
+import app
 from .models import Sources, Articles
 
 # Getting the url key
@@ -14,9 +15,11 @@ news_h_base_url = None
 
 def configure_request(app):
     global api_key, news_a_base_url, news_s_base_url, news_h_base_url
-    news_s_base_url = app.config[' NEWS_SOURCE_BASE_URL']
-    news_a_base_url = app.config[' NEWS_ARTICLE_BASE_URL']
-    news_h_base_url = app.condig['NEWS_TOPHEADLINES_BASE_URL']
+    news_s_base_url = app.config['NEWS_SOURCE_BASE_URL']
+    news_a_base_url = app.config['NEWS_ARTICLE_BASE_URL']
+    news_h_base_url = app.config['NEWS_TOPHEADLINES_BASE_URL']
+    api_key = app.config['NEWS_KEY']
+
 
 
 def get_sources(category):
@@ -27,7 +30,6 @@ def get_sources(category):
     with urllib.request.urlopen(get_sources_url) as url:
         sources_data = url.read()
         sources_response = json.loads(sources_data)
-
         sources_results = None
 
         if sources_response['sources']:
