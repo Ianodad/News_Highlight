@@ -14,17 +14,9 @@ news_h_base_url = None
 
 def configure_request(app):
     global api_key, news_a_base_url, news_s_base_url, news_h_base_url
-    api_key
-
     news_s_base_url = app.config[' NEWS_SOURCE_BASE_URL']
     news_a_base_url = app.config[' NEWS_ARTICLE_BASE_URL']
     news_h_base_url = app.condig['NEWS_TOPHEADLINES_BASE_URL']
-
-
-# getting the movie base url
-base_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
-base_url_articles = 'https://newsapi.org/v2/everything?sources={}&apikey={}'
-base_url_headlines = ''
 
 
 def get_sources(category):
