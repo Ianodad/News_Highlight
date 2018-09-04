@@ -56,7 +56,7 @@ No known errors if found drop a message on my profile
     - Bootstrap 4
 
 ## Support and contact details
-Contact me on developer.Ianodad@gmail.com for any comments, reviews or advice.
+Contact me on developer Ianodad@gmail.com for any comments, reviews or advice.
 
 ### License
 Copyright (c) **Ian Odhiambo**
