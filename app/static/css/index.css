@@ -1,36 +1,22 @@
 .index {
-    background-color: #1F1F1F;
+	background-color: #1f1f1f;
 }
 
-h1 {}
-
-.topic {
-    height: 2em;
-    color: #1c0603;
-    background-color: aliceblue;
-    font-family: 'Lobster',
-        serif;
+h1 {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.topics {
+	height: 2em;
+	color: #1c0603;
+	background-color: aliceblue;
+	font-family: 'Lobster', serif;
+}
 .topd {
-    overflow: hidden;
+	overflow: none;
 }
 
-.card p {
-    font-family: 'Rokkitt', serif;
-}
-
-.source h1 {
-    color: black;
-}
-
-.source .card {
-    opacity: 0.8;
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, .9);
-    transition: 0.3s;
-    width: 40%;
-}
-
-.card : :hover {
-    opacity: 1;
+.card {
+	background-color: #1f1f1f;
+	color: white;
 }
