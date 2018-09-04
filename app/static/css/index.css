@@ -5,7 +5,30 @@
 h1 {}
 
 .topic {
-    height: 10em;
-    color: aliceblue;
+    /* height: 4em; */
+    color: #1c0603;
     background-color: aliceblue;
+}
+
+.topd {
+    overflow: hidden;
+}
+
+.source,
+.card {}
+
+.card {
+    border-radius: 0;
+}
+
+.card p {
+    font-family: 'Rokkitt', serif;
+}
+
+.source h1 {}
+
+.source .card {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, .9);
+    transition: 0.3s;
+    width: 40%;
 }

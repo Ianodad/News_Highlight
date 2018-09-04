@@ -3,8 +3,8 @@
 {% macro sourcesList(sources) %}
 
 {% for source in sources %}
-<div class="source d-flex flex-wrap p-2 mx-auto">
-    <div class="card" style=" width: 20rem;">
+<div class="source d-flex flex-wrap p-2 mx-auto ">
+    <div class="card shadow-lg rounded" style=" width: 20rem;">
         <div class="card-header text-center">
             <a href="{{source.url}}">
                 <h1>{{source.name}}</h1>
@@ -29,10 +29,10 @@
 {% macro articlesList(articles) %}
 
 {% for article in articles %}
-<div class="article">
-    <div class="card">
-        <div class="row ">
-            <div class="col-md-4">
+<div class="article d-flex flex-wrap">
+    <div class="card" style="width: 40rem;">
+        <div class=" row ">
+            <div class=" col-md-4">
                 <img src="{{article.image}}" class="w-100">
                 <p class="card-text text-muted">Source: {{article.name}}</p>
             </div>
