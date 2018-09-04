@@ -1,4 +1,4 @@
-# [NewsHighlight](https://)
+# [NewsSourceHighlights](https://news-sources-highlight.herokuapp.com/)
 ## News Highlight is a web application meant to dislpay news source and there artciles 
 #### By **[Ian Odhiambo](https://github.com/ianodad)**
 
@@ -7,7 +7,7 @@ The application know has news highlight is a plicatio that uses a newsapi json t
 are later defined and categories by there very onw news types. The news source will then display link s to eather take the user to the main site or
 a way to display more articles in relation to thats source.
 
-Click [here](https://news_highlights/) to see the live sit
+Click [here](https://news-sources-highlight.herokuapp.com/) to see the live sit
 
 ## Specifications
 | Behavior            | Input                         | Output                        | 
