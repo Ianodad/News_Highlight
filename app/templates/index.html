@@ -3,18 +3,14 @@
 
 <!-- Styles block -->
 
-{% block styles%}
-{{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock %}
-<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Lobster|Lobster+Two|Monoton|Rokkitt" rel="stylesheet">
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
     <title>Document</title>
 </head>
 
@@ -29,19 +25,23 @@
             <h1 class="topics col-md-12 text-center display-3 bg-light ">GENERAL</h1>
             {{ macro.sourcesList(general) }}
         </div>
-        <div class="row" id="business">
-            <h1 class="topics col-md-12 text-center display-3 bg-light">BUINESS</h1>
+        <div class="row"
+             id="business">
+            <h1 class="topics col-md-12 text-center display-3 bg-light">BUSINESS</h1>
             {{ macro.sourcesList(business) }}
         </div>
-        <div class="row" id="entertainment">
+        <div class="row"
+             id="entertainment">
             <h1 class="topics col-md-12 text-center display-3 bg-light">ENTERTAINMENT</h1>
             {{ macro.sourcesList(entertainment) }}
         </div>
-        <div class="row" id="technology">
+        <div class="row"
+             id="technology">
             <h1 class="topics col-md-12 text-center display-3 bg-light">TECHNOLOGY</h1>
             {{ macro.sourcesList(technology) }}
         </div>
-        <div class="row" id="science">
+        <div class="row"
+             id="science">
             <h1 class="topics col-md-12 text-center display-3 bg-light">SCIENCE</h1>
             {{ macro.sourcesList(science) }}
         </div>
